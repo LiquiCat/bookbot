@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+import sys
+
 from stats import get_word_count, \
                     get_letter_count, \
                     sort_letter_count, \
@@ -13,7 +15,12 @@ def get_book_text(file_path: str) -> str:
 
 def main():
 
-    book_path = "./books/frankenstein.txt"
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    
+    book_path = sys.argv[1]
+
     book_text = get_book_text(book_path)
     word_count = get_word_count(book_text)
     sorted_letters = sort_letter_count(get_letter_count(book_text))
