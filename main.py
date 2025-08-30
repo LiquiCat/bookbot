@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
-from stats import get_word_count, get_letter_count, sort_letter_count, beautify_letter_dict
+from stats import get_word_count, \
+                    get_letter_count, \
+                    sort_letter_count, \
+                    beautify_letter_dict
 
 def get_book_text(file_path: str) -> str:
     with open(file_path) as file:
